@@ -79,7 +79,20 @@ const Model = () => {
                 top: 0,
                 left: 0,
               }}
-            ></canvas>
+              eventSource = {document.getElementById('root')}
+            >
+              <View.Port />
+            </canvas>
+          </div>
+
+          <div
+          className='mx-auto w-full'
+          >
+            <p
+            className='text-sm fon'
+            >
+              {model.title}
+            </p>
           </div>
         </div>
       </div>

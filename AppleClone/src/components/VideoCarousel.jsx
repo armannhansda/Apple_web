@@ -166,12 +166,6 @@ export const VideoCarousel = () => {
           isPlaying: false, // Set to pause
         }));
         break;
-      case "play":
-        setVideo((pre) => ({
-          ...pre,
-          isPlaying: !pre.isPlaying, // Toggle between play and pause
-        }));
-        break;
       default:
         return video;
     }
