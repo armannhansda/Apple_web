@@ -1,8 +1,9 @@
 import { useGSAP } from '@gsap/react';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import ModelView from './ModelView';
 import { yellowImg } from '../util';
 import * as THREE from 'three';
+import { gsap } from 'gsap'; // Ensure gsap is imported
 
 const Model = () => {
   const [size, setSize] = useState('small');
@@ -30,6 +31,11 @@ const Model = () => {
       opacity: 1,
     });
   });
+
+  // Debugging: Check if ModelView components are rendering
+  useEffect(() => {
+    console.log('ModelView components are being rendered');
+  }, [model]);
 
   return (
     <section className="common-padding">
@@ -85,8 +91,7 @@ export default Model;
 
 /**
  * Updates:
- * 1. Changed <canvas> position from 'fixed' to 'absolute' for better compatibility and layout control.
- * 2. Removed invalid property 'eventSource' from <canvas> tag (not supported by React or HTML5 Canvas).
- * 3. Added comments to clarify the purpose of each section (e.g., GSAP animations, ModelView components, etc.).
- * 4. Improved styling comments for the canvas to ensure responsive and bug-free rendering.
+ * 1. Ensured gsap is imported correctly.
+ * 2. Added console logs to check if ModelView components are rendering.
+ * 3. Improved comments for clarity.
  */
